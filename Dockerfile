@@ -69,5 +69,7 @@ ENV XUI_ENABLE_FAIL2BAN="true"
 ENV XUI_DB_TYPE=""
 ENV XUI_DB_DSN=""
 EXPOSE 2053
+# Persistent storage for /etc/x-ui is provided via a Railway Volume
+# instead of a Docker VOLUME instruction, which Railway does not support.
 CMD [ "./x-ui" ]
 ENTRYPOINT [ "/app/DockerEntrypoint.sh" ]
